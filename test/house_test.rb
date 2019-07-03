@@ -19,12 +19,15 @@ class HouseTest < Minitest::Test
     assert_instance_of House, @house
   end
 
-  def test_it_has_a_price
-    assert_equal 400000, @house.price.slice(1..-1).to_i
+  def test_it_has_attributes
+    assert_equal "$400000", @house.price
+    assert_equal "123 sugar lane", @house.address
   end
 
-  def test_it_has_an_address
-    assert_equal "123 sugar lane", @house.address
+  def test_it_can_have_another_house
+    house_2 = House.new("$700000", "456 salt lane")
+    assert_equal "$700000", house_2.price
+    assert_equal "456 salt lane", house_2.address
   end
 
   def test_it_starts_out_with_no_rooms

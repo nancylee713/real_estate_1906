@@ -23,4 +23,10 @@ class RoomTest < Minitest::Test
     # }
   end
 
+  def test_it_can_have_another_room
+    room_2 = Room.new(:kitchen, 20, 40)
+    assert_equal :kitchen, room_2.category
+    assert_equal 800, room_2.area
+  end
+
 end
