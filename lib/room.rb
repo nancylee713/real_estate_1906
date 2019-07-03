@@ -7,6 +7,4 @@ class Room
     @area = width * length
   end
 
-
-
 end
